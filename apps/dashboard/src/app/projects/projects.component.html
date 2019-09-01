@@ -11,7 +11,7 @@
         <mat-list>
           <mat-list-item
             (click)="selectProject(project)"
-            *ngFor="let project of projects"
+            *ngFor="let project of projects$ | async"
           >
             <h3 mat-line>
               {{project.title}}
@@ -19,7 +19,9 @@
             <p mat-line>
               {{project.details}}
             </p>
-            <button mat-icon-button>
+            <button mat-icon-button
+              (click)="deleteProject(project);$event.stopImmediatePropagation()"
+            >
               <mat-icon>close</mat-icon>
             </button>
           </mat-list-item>
@@ -38,9 +40,13 @@
           </h1>
         </mat-card-title>
       </mat-card-header>
-      <form>
+      <form
+        (submit)="saveProject(selectedProject)"
+      >
         <mat-card-content>
-          {{selectedProject?.details}}
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Title" [(ngModel)]="selectedProject.title" type="text" name="title">
+          </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
           <button type="submit" mat-button color="primary">Save</button>

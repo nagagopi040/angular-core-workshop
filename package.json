@@ -5,6 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "server:all": "concurrently \"npm run server\" \"ng serve\"",
+    "server": "json-server server/db.json",
+    "server:auth": "node server/server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
@@ -16,7 +19,6 @@
     "affected:test": "./node_modules/.bin/nx affected:test",
     "affected:lint": "./node_modules/.bin/nx affected:lint",
     "affected:dep-graph": "./node_modules/.bin/nx affected:dep-graph",
-    "affected": "./node_modules/.bin/nx affected",
     "format": "./node_modules/.bin/nx format:write",
     "format:write": "./node_modules/.bin/nx format:write",
     "format:check": "./node_modules/.bin/nx format:check",
@@ -24,7 +26,8 @@
     "update:check": "ng update",
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
-    "help": "./node_modules/.bin/nx help"
+    "help": "./node_modules/.bin/nx help",
+    "affected": "./node_modules/.bin/nx affected"
   },
   "private": true,
   "dependencies": {
