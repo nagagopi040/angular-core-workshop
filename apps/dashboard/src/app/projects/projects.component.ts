@@ -10,9 +10,7 @@ export class ProjectsComponent implements OnInit {
   projects$;
   selectedProject: Project;
 
-  constructor(private projectsService: ProjectsService) {
-
-  }
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
     this.getProjects();
