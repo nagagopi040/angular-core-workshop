@@ -96,8 +96,8 @@
       "id": "1",
       "title": "Project HOLLA!",
       "details": "This is a sample project",
-      "percentComplete": 20,
-      "approved": false,
+      "percentComplete": 42,
+      "approved": true,
       "startDate": null,
       "targetDate": null,
       "completionDate": null,
@@ -118,7 +118,14 @@
       "id": "NaLriMg",
       "title": "TEST Project!",
       "details": "TEST",
-      "percentComplete": 89,
+      "percentComplete": 100,
+      "approved": true
+    },
+    {
+      "id": "aRTSo_n",
+      "title": "Project New",
+      "details": "This is a new project",
+      "percentComplete": 10,
       "approved": true
     }
   ]
